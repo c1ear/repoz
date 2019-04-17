@@ -45,6 +45,9 @@
 //
 //  Common
 //  _____________________________________________
+html {
+    overflow-x: hidden;
+}
 
 & when (@media-common = true) {
 
@@ -191,6 +194,10 @@
 
             .switcher-store {
                 margin: 0 0 30px;
+            }
+            .copyright {
+                border-top: 1px solid #ccc;
+                padding-top: 20px;
             }
         }
 
@@ -354,10 +361,34 @@
             width: 100%;
         }
     }
+    .nav-sections {
+        background: #5a6465;
 
-    .navigation ul {
-        padding: 0 8px;
+        .navigation {
+            background: #5a6465;
+            ul {
+                padding: 0 8px;
+                a.level-top {
+                    padding-bottom: 2px !important;
+
+                    &:hover {
+                        border-bottom: 2px solid #ffa800;
+                        box-sizing: border-box;
+                        padding-bottom: 0 !important;
+                    }
+                }
+                span {
+                    color: #fff;
+                }
+                ul {
+                    span {
+                        color: #000;
+                    }
+                }
+            }
+        }
     }
+
 
     .header {
         &.panel {
@@ -429,13 +460,12 @@
         }
         &.content {
             &:extend(.abs-add-clearfix-desktop all);
-            padding: @indent__l @indent__base 0;
-            padding: 0;
             display: flex;
             height: 100px;
             justify-content: space-between;
             width: 100%;
             align-items: center;
+            padding: 0 20px;
 
             &:before {
                 display: none;
